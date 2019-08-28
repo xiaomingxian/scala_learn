@@ -15,3 +15,6 @@ var与val:
     2大类:AnyVal(值类型)/AnyRef(引用类型)  #都是对象
 
 类型转换：低精度的值向高精度的值自动转换[隐式转换]
+Unit 相当于void  值为()
+Null 相当于null引用 null只能赋值给AnyRef 不能赋值给AnyVal
+Nothing 最底层可以作为任何类型的子类型-[常用来处理异常]
