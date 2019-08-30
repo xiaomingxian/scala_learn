@@ -1,4 +1,7 @@
+Scala基于jvm  #API=java(scala对java进行包装)+scala特有
 .class 与 .scala都可以直接运行   #.scala运行更慢(编译和运行都有)
+
+
 
 
 现代编译器：
