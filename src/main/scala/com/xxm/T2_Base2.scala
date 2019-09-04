@@ -20,6 +20,7 @@ object T2_Base2 {
   }
 
   def for_demo: Unit = {
+    //while do /while 略
     for (i <- 1 to 3) {
       //前后闭合
       println("---->context:", i)
@@ -29,7 +30,7 @@ object T2_Base2 {
       println("---<前闭后开>---", i)
     }
 
-    println("---------------多层for循环-----------")
+    println("---------------多层for循环（循环嵌套）-----------")
     var ii = 0
     for (i <- 1 to 3; j <- 5 to 10; k <- 1 to 4) {
       //i*j
@@ -48,9 +49,24 @@ object T2_Base2 {
       a
         <- List(1, 2, 3, 4, 5, 6, 7)
       if a < 6;if a > 2
-    } yield a
+    } yield a//将遍历的结果返回到一个新的Vector集合中
 
     for (aa <- yield_val) println("========>:" + aa)
+
+
+    println("---" * 5, "循环守卫(保护)")
+    //  类似与 continue
+    for (i <- 1 to 10 if i % 2 == 0) {
+      println("--循环守卫：" + i)
+    }
+    println("---" * 5, "引入变量")
+    for(i<-1 to 10 ;j=i+10){
+      println("-->"+j)
+
+    }
+
+
+
   }
 
   def main(args: Array[String]): Unit = {
