@@ -20,6 +20,8 @@ object T2_Base2 {
   }
 
   def for_demo: Unit = {
+
+    //for(){} 等价于 for{}{}
     //while do /while 略
     for (i <- 1 to 3) {
       //前后闭合
@@ -65,9 +67,40 @@ object T2_Base2 {
 
     }
 
+    println("------" * 5, "控制步长的两种方式 1-Range对象，2-循环守卫")
+    //  method1
+    for (i <- Range(1, 10, 2)) {
+      println("-----Range对象" + i)
+    }
+
+    for (i <- 1 to 10 if i % 2 == 1) {
+      println("----循环守卫" + i)
+    }
+
 
 
   }
+
+  def while_demo: Unit = {
+    // while 略
+    // do while 略
+
+  }
+
+  def mul_xunhuan: Unit = {
+    //9x9乘法表
+    for (i <- 1 to 10) {
+      for (j <- 1 to i) {
+        print(i + "x" + j + "=" + (i * j) + "\t")
+      }
+      println()
+
+    }
+
+
+  }
+
+
 
   def main(args: Array[String]): Unit = {
     //1.demo
@@ -76,6 +109,10 @@ object T2_Base2 {
     //console_demo
     //3.for循环
     for_demo
+    //4.while
+    while_demo
+    //5.多重循环案例
+    mul_xunhuan
   }
 }
 //特质：综合了 接口与抽象类
