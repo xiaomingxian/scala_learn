@@ -2,7 +2,7 @@ package com.xxm
 
 //import scala.io.StdIn
 import scala.io._
-
+import scala.util.control.Breaks._
 object T2_Base2 {
 
 
@@ -101,6 +101,28 @@ object T2_Base2 {
   }
 
 
+  def break_demo: Unit = {
+    var x = 1
+    breakable {
+      //捕获异常
+      while (true) {
+        x += 1
+        if (x > 10) {
+          //抛出异常
+          break()
+        }
+      }
+    }
+  }
+
+  def continue_demo: Unit = {
+    //  思路 循环守卫
+    for (i <- 1 to 10; if i != 3 && i != 5) {
+      println("----->循环守卫实现continue:" + i)
+    }
+
+
+  }
 
   def main(args: Array[String]): Unit = {
     //1.demo
@@ -113,6 +135,10 @@ object T2_Base2 {
     while_demo
     //5.多重循环案例
     mul_xunhuan
+    //  6.break
+    break_demo
+    //  7.continue
+    continue_demo
   }
 }
 //特质：综合了 接口与抽象类
