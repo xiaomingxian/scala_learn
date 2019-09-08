@@ -19,6 +19,12 @@ object T3_Function {
     * 10 函数的形参默认是val不允许修改
     */
 
+
+  /**
+    * 概念：
+    * 过程函数：函数的返回值为Unit # 如果函数没有明确的返回值，等号可以省略  #有自动类型推断的不属于此范畴
+    */
+
   def haveDefault(name: String = "mac"): Unit = {
     //name="----"//val 修改报错
   }
@@ -83,9 +89,48 @@ object T3_Function {
 
   }
 
+  def sum2(n: Int, args: Int*): Int = {
+
+
+    println("--->参数个数：" + args.length + 1)
+
+    var sum = n
+    for (i <- args) {
+      sum += i
+    }
+    sum
+  }
+
+  def kebian: Unit = {
+    //  1 求和
+    val sum = sum2(1, 2, 3, 4, 5, 6)
+    println("====>可变参数求和：" + sum)
+    //  2 var x ="ssss"  等价于 def x()={"ssss"}
+
+
+  }
+
+  def dx_test: Int = {
+    println("-----------函数执行。。。。。。")
+    1
+  }
+
+  def duoxing: Unit = {
+    //通过关键字---不能修饰var 是线程安全的
+    //lazy var x = dx_test
+    lazy val x = dx_test
+    //真正使用函数
+    println("----真正使用函数：" + x)
+    //  lazy 也可以修饰 lazy val x = 1  使用 x #通过终端测试
+  }
+
   def main(args: Array[String]): Unit = {
     //1.base
     base
+    //  2 可变参数
+    kebian
+    //  3 惰性函数
+    duoxing
 
   }
 
