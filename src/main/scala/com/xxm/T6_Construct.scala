@@ -39,19 +39,20 @@ class A(name: String, age: Int) {
 
   println("-------after--------")
   //辅助构造器2
-  //def this(name: String, age: Int) {
+  //def this(name: String, age: Int)s {
   //  this(name)
   //  this.age2 = age
   //}
 
 }
-
-class Father2 {
+//主构造器私有
+class Father2 private() {
   println("=======父类")
 }
 
 class Son2 extends Father2 {
-  def this(name: String) {
+  //辅助构造器私有
+  private def this(name: String) {
     this
     println("-----子类")
   }
