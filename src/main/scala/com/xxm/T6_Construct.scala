@@ -11,7 +11,8 @@ object Construct {
     println(aa)
     println("～～～～～～～～～～～～～～～～～～～～～～")
     //  测试 显示调用父类是为了调用其父类
-    val son = new Son2("tom")
+    val son = new Son2("tom") //构造方法私有后会报错
+
 
   }
 
@@ -46,13 +47,15 @@ class A(name: String, age: Int) {
 
 }
 //主构造器私有
-class Father2 private() {
+class Father2 //private()
+{
   println("=======父类")
 }
 
 class Son2 extends Father2 {
   //辅助构造器私有
-  private def this(name: String) {
+  //private
+  def this(name: String) {
     this
     println("-----子类")
   }
