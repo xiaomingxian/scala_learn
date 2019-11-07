@@ -1,4 +1,4 @@
-package com.xxm
+package com.xxm.baseOne
 
 //import scala.io.StdIn
 import scala.io._

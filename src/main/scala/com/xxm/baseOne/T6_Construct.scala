@@ -1,4 +1,4 @@
-package com.xxm
+package com.xxm.baseOne
 
 /**
   * 主构造器和辅助构造器
