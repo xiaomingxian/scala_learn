@@ -11,8 +11,6 @@ object T5_OOP {
     * Scala中类的修饰符默认是 public 但是写上反而会报错
     *
     * 一个Scala源文件可以包含多个public类
-    *
-    *
     */
 
   def diguiUnicode(str: String): Long = {

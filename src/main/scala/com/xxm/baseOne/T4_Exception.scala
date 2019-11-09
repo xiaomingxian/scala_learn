@@ -24,7 +24,7 @@ object T4_Exception {
 
   def main(args: Array[String]): Unit = {
     //1 base
-    base
+    //base
     //2 test
     //var ex = test
     //println(ex.toString)
