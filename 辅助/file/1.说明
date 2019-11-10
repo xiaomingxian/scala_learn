@@ -63,3 +63,26 @@ scala只有运行异常(捕获异常 catch 范围大的可以写在前面不回�
     4 使用主构造器进行初始化(属性初始化 eg:name="tom")
     5 使用辅助构造器对属性进行初始化
     6 将开辟的空间赋给引用
+============================== package ======================================
+scala中包名和源码所在系统文件目录结构可能不一样，但是编译后的字节码文件路径和包名会保持一致(编译器完成)
+不需引入的包 java.lang  scala Predef
+查看包 光标定位 ctrl+b
+
+object会生成 xxx.class和xxx$.class
+class xxx只会生成xxx.class
+
+package的三种方式
+    1 一级 package xxx.xxx.xxx
+    2 二级 package xxx.xxx [换行]package xxx
+    3 嵌套 package xxxx.xxx.xxx{package xxxx}
+嵌套包的使用 就近原则(同名情况下)(非要使用父包中的类得写全类名) 父包要访问子包得使用import
+包对象(解决包中不能直接写变量/函数的情况)(jvm认为变量/函数应该归属于对象)
+/**
+  * 包对象与包得在同级目录下
+  * packageObj对象与packageObj都在com.xxm下
+  * 包对象中的属性方法直接使用  参考：com.xxm.re_base.T3_Package
+  */
+
+
+
+
