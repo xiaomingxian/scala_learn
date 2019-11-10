@@ -75,12 +75,17 @@ package的三种方式
     1 一级 package xxx.xxx.xxx
     2 二级 package xxx.xxx [换行]package xxx
     3 嵌套 package xxxx.xxx.xxx{package xxxx}
+
 嵌套包的使用 就近原则(同名情况下)(非要使用父包中的类得写全类名) 父包要访问子包得使用import
+
 包对象(解决包中不能直接写变量/函数的情况)(jvm认为变量/函数应该归属于对象)
 /**
   * 包对象与包得在同级目录下
   * packageObj对象与packageObj都在com.xxm下
   * 包对象中的属性方法直接使用  参考：com.xxm.re_base.T3_Package
+  调用原理：
+        //会生成两个class package.class package$.class
+        //属性/方法的调用 package$中的静态实例 public static final MODULE$ 调用属性与方法
   */
 
 

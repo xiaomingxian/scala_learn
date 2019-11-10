@@ -74,6 +74,8 @@ package com.xxm.packageObj {
 
   object ABC {
     def main(args: Array[String]): Unit = {
+      //会生成两个class package.class package$.class
+      //属性/方法的调用 package$中的静态实例 public static final MODULE$ 调用属性与方法
       println("xxx", name, f1())
     }
   }
