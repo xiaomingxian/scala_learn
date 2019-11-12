@@ -12,7 +12,9 @@ object Construct {
     println("～～～～～～～～～～～～～～～～～～～～～～")
     //  测试 显示调用父类是为了调用其父类
     val son = new Son2("tom") //构造方法私有后会报错
-
+    println("==================子类构造器向父类构造器传值===================")
+    var son3: Son3 = new Son3("Tom")
+    son3.showInfo()
 
   }
 
@@ -45,18 +47,36 @@ class A(name: String, age: Int) {
   //  this.age2 = age
   //}
 
+
+
 }
 //主构造器私有
 class Father2 //private()
 {
-  println("=======父类")
+  println("=======父类主构造器")
 }
 
 class Son2 extends Father2 {
+  println("---------子类主构造器")
   //辅助构造器私有
   //private
   def this(name: String) {
     this
-    println("-----子类")
+    println("-----子类辅助构造器")
+  }
+
+}
+
+//子类构造方法向父类构造方法传值  super什么的不管用(没有这种写法)
+class Father3(name: String) {
+  var pName: String = name
+
+}
+//父类构造器参数使用的是子类主构造器的参数 ：class Son3(name: String) extends Father3(name)
+class Son3(name: String) extends Father3(name) {
+  //scala重写属性需要 override修饰
+  override var pName: String = name
+  def showInfo(): Unit = {
+    println("获取父类属性：", pName)
   }
 }

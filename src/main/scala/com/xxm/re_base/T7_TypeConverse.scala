@@ -16,5 +16,8 @@ object T7_TypeConverse {
     var list: List[String]= new util.ArrayList[String]()
     var list2=list.asInstanceOf[util.ArrayList[String]]
 
+    //4 类型判断 isInstanceOf
+    println("4 类型判断：", "ss".isInstanceOf[String])
+
   }
 }
