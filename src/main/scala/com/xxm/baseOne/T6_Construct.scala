@@ -15,6 +15,14 @@ object Construct {
     println("==================子类构造器向父类构造器传值===================")
     var son3: Son3 = new Son3("Tom")
     son3.showInfo()
+    //  访问属性 使用的是方法所以不会根据引用的变化而变化
+    var f: Father3 = new Son3("Tom")
+    println("================ 属性重写 =====================")
+    println("父类引用访问属性：", f.address)
+    println("子类引用访问属性", son3.address)
+    println("================ val重写def(不带参数) =====================")
+    //调用还是使用的方法 得到的都是子类的属性值
+    println("父类：", f.age, "\t 子类：", son3.age)
 
   }
 
@@ -69,13 +77,23 @@ class Son2 extends Father2 {
 
 //子类构造方法向父类构造方法传值  super什么的不管用(没有这种写法)
 class Father3(name: String) {
-  var pName: String = name
+  val pName: String = name
+
+  val address: String = "mmmm"
+
+  def age(): Int = {
+    0
+  }
 
 }
 //父类构造器参数使用的是子类主构造器的参数 ：class Son3(name: String) extends Father3(name)
 class Son3(name: String) extends Father3(name) {
   //scala重写属性需要 override修饰
-  override var pName: String = name
+  override val pName: String = name
+  override val address: String = "BeiJing"
+
+  override val age: Int = 10
+
   def showInfo(): Unit = {
     println("获取父类属性：", pName)
   }
