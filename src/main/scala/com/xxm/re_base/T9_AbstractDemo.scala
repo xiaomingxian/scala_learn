@@ -16,6 +16,7 @@ object T9_AbstractDemo {
     }.name="赋值操作"
 
 
+    new ABCD().f1()
 
   }
 }
@@ -31,3 +32,17 @@ abstract class AABS {
 class BBBS extends AABS {
   var name: String = "重写属性 加不加 override 都可以"
 }
+
+class ABCD {
+  private val name: String = "jack"
+
+  private[this] val age = 10
+
+
+  def f1(): Unit = {
+
+    println(name, age)
+  }
+}
+
+object ABCD {}

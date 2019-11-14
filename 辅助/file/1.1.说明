@@ -88,7 +88,7 @@ package的三种方式
         //属性/方法的调用 package$中的静态实例 public static final MODULE$ 调用属性与方法
   */
 
-同一个文件同时出现 class Xxx(伴生类[非静态]) object Xxx(伴生对象[静态])
+(T4_Package2.scala)同一个文件同时出现 class Xxx(伴生类[非静态]) object Xxx(伴生对象[静态]) public static final MODULES(类的单例实例)
 包的可见性：T4_Package2
 包的引入：可以在任何位置引入(需要时在引用)(有作用域[超出会报错])   xxx._等价与java中的*
 protected只能在子类访问  虽然编译后是public 但是不能访问(编译器在编译前控制，不允许访问)

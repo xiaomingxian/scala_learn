@@ -2,3 +2,22 @@
     伴生对象(伴生类的一个实例，只会被实例化一次)中全是静态相关
     从底层原理看，伴生对象的实现静态特性是依赖于：
         public static final MODULES$(伴生类的一个实例只会被初始化一次,通过它来实现方法/属性调用的调用) 实现的
+    只有一个 object xxx{} 同时会生成一个空的 class xxx{}
+
+
+trait：java中的接口在scala中都可以按照特质使用
+继承特质：
+    全是特质：class xxx extends 特质1 with 特质2 with ...
+    带有父类：class xxx extends 父类(必须写在第一位) with 特质1 with 特质2 ...
+
+当trait中只有抽象方法(编译后只会生成一个class文件，public abstract interface xxx{ 抽象方法})(继承trait的类编译后 用的是 implements[与java一致])
+当trait中既有抽象方法又有非抽象方法时(编译后会生成一个接口文件 public abstract interface xxx.class)与一个抽象类(public abstract class xxx$class.class)
+    继承者编译后：实现抽象方法与非抽象方法(仅仅十个包装，内部调用还是通过抽象类调用)
+================= 创建对象的方式(形式上)
+1 new xxx()
+2 apply
+3 匿名子类
+4 动态混入
+
+特质叠加：声明从左到右(对象构建)，执行方法从右到左
+
