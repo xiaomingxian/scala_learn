@@ -59,7 +59,8 @@ trait TS3_2 extends TS2 {
 
   override def f(): Unit = {
     println("---->TS3_2")
-    super.f()
+    //super.f()//按照以上写法--左边有特质会调用左边TS3_1的方法 而不会调用 父类的方法
+    super[TS2].f()// new Normal with TS3_1 with TS3_2 //父类执行完毕 继续往左边找
   }
 
 
